@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'HOST':'marketmate-dev.c4su80xblosx.ap-southeast-2.rds.amazonaws.com',
         'PORT':'5432',
         'NAME': 'testing',
