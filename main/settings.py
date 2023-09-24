@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django-storages',
     'catalog.apps.CatalogConfig',
 ]
 
@@ -144,20 +143,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Setting up S3 Storage configurations
-AWS_S3_ADDRESSING_STYLE = "virtual"
-
-STORAGES = {
-    "default": {
-        "BACKEND": "storages.backends.s3.S3Storage",
-        "OPTIONS": {
-            "bucket_name": os.environ['AWS_STORAGE_BUCKET_NAME'],
-            "region_name": os.environ['AWS_S3_REGION_NAME'],
-            "access_key": os.environ['AWS_ACCESS_KEY_ID'],
-            "secret_key": os.environ['AWS_SECRET_ACCESS_KEY'],
-            "default_acl": "public-read",
-        },
-    },
-}
 
